@@ -15,6 +15,7 @@ class CharactersCubit extends Cubit<CharactersState> {
     });
     return characters;
   }
+  //tring
 
    void getCharacterQuotes(String charName) {
     myCharactersRepository.getCharacterQuotes(charName).then((value) {
