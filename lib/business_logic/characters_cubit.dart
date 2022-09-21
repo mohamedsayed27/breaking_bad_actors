@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_breaking/data/models/characters_model.dart';
+
 import '../data/repositories/characters_repository.dart';
 import 'characters_state.dart';
 

@@ -5,6 +5,7 @@ import 'package:flutter_breaking/business_logic/characters_state.dart';
 import 'package:flutter_breaking/constants/colors.dart';
 import 'package:flutter_breaking/data/models/characters_model.dart';
 import 'package:flutter_offline/flutter_offline.dart';
+
 import '../widgets/character_item.dart';
 
 class CharactersScreen extends StatefulWidget {
@@ -160,6 +161,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
     return SingleChildScrollView(
       child: Container(
         color: AppColors.myGrey,
+        // height: size.height,
         child: Column(
           children: [
             buildCharactersGridView(),
@@ -180,8 +182,10 @@ class _CharactersScreenState extends State<CharactersScreen> {
         itemCount: searchController.text.isEmpty
             ? allCharacters.length
             : searchedCharacters.length,
+        controller:  ScrollController(keepScrollOffset: false),
         shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
           return CharacterItem(
